@@ -41,12 +41,12 @@
     .fleet-container{
         padding-left: 0px !important;
         padding-right: 0px !important;
+        padding-bottom: 100px !important;
     }
     .footer-container{
         max-width: 984px !important;
     }
-    .fleet-swiper{
-    }
+
 }
 @media screen and (max-width:1400px){
     .content-headline{
