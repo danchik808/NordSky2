@@ -14,34 +14,52 @@
 </head>
 
 <body>
+    <div id="app">
     <header>
         <nav class="nav-bar">
             <div class="container-header">
                 <div class="logo">
                     <a href="index.html"><img src="img/logo2.png" alt="Логотип" height="60px"></a>
                 </div>
+                <div class="burger">
+                    <img @click="burger = !burger" src="img/6228b5a8cd7aad2465a6627a_134216_menu_lines_hamburger_icon-p-2600.png" width="30px"/>
+                </div>
+                <div :style="{display: burger ? 'block' : 'none'}" class="burger-menu">
+                    <img @click="burger = !burger" src="img/6228b5a8cd7aad2465a6627a_134216_menu_lines_hamburger_icon-p-2600.png" width="70px">
+                    <div class="nav-list1">
+                        <a @click="burger = false" href="#1" class="nav-item-a1">
+                            <li class="nav-item1">{{translate ? "О компании" : "About us"}}</li>
+                        </a>
+                        <a @click="burger = false" href="#2" class="nav-item-a1">
+                            <li class="nav-item1">{{translate ? "Флот компании" : "Company Fleet"}}</li>
+                        </a>
+                        <a href="#" @click="translate = !translate; burger = false" class="nav-item-a1">
+                            <li class="nav-item1">{{translate ? "ENG" : "RUS"}}</li>
+                        </a>
+                    </div>
+                </div>
                 <div class="nav-list">
                     <a href="#1" class="nav-item-a">
-                        <li class="nav-item" >О компании</li>
+                        <li class="nav-item">{{translate ? "О компании" : "About us"}}</li>
                     </a>
                     <a href="#2" class="nav-item-a">
-                        <li class="nav-item">Флот компании</li>
+                        <li class="nav-item">{{translate ? "Флот компании" : "Company Fleet"}}</li>
                     </a>
-                    <a href="#" class="nav-item-a">
-                        <li class="nav-item">ENG</li>
+                    <a href="#" @click="translate = !translate" class="nav-item-a">
+                        <li class="nav-item">{{translate ? "ENG" : "RUS"}}</li>
                     </a>
                 </div>
             </div>
         </nav>
     </header>
-    <main>
+    <main :style='{ display: burger ? "none" : "block" }'>
         <section class="main-content">
             <div class="container-content">
                 <div class="main-content-left">
-                    <h1 class="content-headline">ПРОБОВАЛИ</h1>
-                    <h1 class="content-headline">ЛЕТАТЬ ПО НАСТОЯЩЕМУ?</h1>
+                    <h1 class="content-headline">{{translate ? "ПРОБОВАЛИ" : "HAVE YOU"}}</h1>
+                    <h1 class="content-headline">{{translate ? "ЛЕТАТЬ ПО-НАСТОЯЩЕМУ?" : "TRIED TO FLY FOR REAL?"}}</h1>
                     <a class="content-btn" href="https://vk.com/nordsky_va?w=app5619682_-202451545"
-                        target="_blank"><button>Подать заявку</button></a>
+                        target="_blank"><button>{{translate ? "Подать заявку" : "Submit an application"}}</button></a>
                 </div>
                 <div class="main-content-right">
                     <div class="swiper">
@@ -60,56 +78,52 @@
         </section>
         <section class="about-us" id="1">
             <div class="about-us-container">
-                <h2 class="about-us-headline">О нас</h2>
+                <h2 class="about-us-headline">{{translate ? "О нас" : "About us"}}</h2>
                 <div class="about-us-texts">
-                    <p class="about-us-text">Nordsky — это виртуальная авиакомпания европейской части России, работающая
-                        в своей сфере более двух лет. Наша авиакомпания была основана еще в начале 2021 года и
-                        продолжает свою деятельность до сих пор. </p>
-                    <p class="doco">Средний возраст нашего флота составляет всего 5,3 месяца. Сейчас в качестве хабов
-                        используются Москва, Санкт-Петербург, Красноярск и Архангельск. С получением новых воздушных
-                        судов будут открываться и новые направления, хабы. Сейчас в качестве хабов используются Москва,
-                        Санкт-Петербург, Красноярск и Архангельск.</p><button onclick="show()" class="btn">Раскрыть</button>
+                    <p class="about-us-text">{{translate ? "NordSky — это виртуальная авиакомпания европейской части России, работающая в своей сфере более двух лет. Наша авиакомпания была основана еще в начале 2021 года и продолжает свою деятельность до сих пор." : "NordSky is a virtual airline of the European part of Russia, operating in its field for more than two years. Our airline was founded at the beginning of 2021 and continues its activities to this day."}}</p>
+                    <p class="doco">{{translate ? "Средний возраст нашего флота составляет всего 5,3 месяца. Сейчас в качестве хабов используются Москва, Санкт-Петербург, Красноярск и Архангельск. С получением новых воздушных судов будут открываться и новые направления, хабы. Сейчас в качестве хабов используются Москва, Санкт-Петербург, Красноярск и Архангельск." : "The average age of our fleet is only 5.3 months. Now Moscow, St. Petersburg, Krasnoyarsk and Arkhangelsk are used as hubs. With the receipt of new aircraft, new destinations and hubs will be opened. Now Moscow, St. Petersburg, Krasnoyarsk and Arkhangelsk are used as hubs."}}</p><button onclick="show()" class="btn">{{translate ? "Скрыть" : "More"}}</button>
                 </div>
             </div>
         </section>
         <section class="adv">
             <div class="adv-container">
-                <h2 class="adv-headline">Почему стоит летать с нами?</h2>
+                <h2 class="adv-headline">{{translate ? "Почему стоит летать с нами?" : "Why is it worth flying with us?"}}</h2>
                 <ul class="adv-list">
-                    <li class="adv-item">* Дружелюбный коллектив</li>
-                    <li class="adv-item">* Более 25 сотрудников уже с нами</li>
-                    <li class="adv-item">* Легкое вступление</li>
-                    <li class="adv-item">* Возможность обучения внутри компании</li>
-                    <li class="adv-item">* Поощрение за активность полётов</li>
+                    <li class="adv-item">{{translate ? "* Дружелюбный коллектив" : "* Friendly staff"}}</li>
+                    <li class="adv-item">{{translate ? "* Более 25 сотрудников уже с нами" : "* More than 25 employees are already with us"}}</li>
+                    <li class="adv-item">{{translate ? "* Легкое вступление" : "* Easy introduction"}}</li>
+                    <li class="adv-item">{{translate ? "* Возможность обучения внутри компании" : "* The possibility of training within the company"}}</li>
+                    <li class="adv-item">{{translate ? "* Поощрение за активность полётов" : "* Reward for the activity of flights"}}</li>
                 </ul>
-                <a href="https://vk.com/nordsky_va?w=app5619682_-202451545"><button class="adv-button">Подать
-                        заявку</button></a>
+                <a href="https://vk.com/nordsky_va?w=app5619682_-202451545" target="_blank"><button class="adv-button">{{translate ? "Подать заявку" : "Submit an application"}}</button></a>
             </div>
         </section>
-        <section id="2" class="fleet">
-            <div class="fleet-container">
-                <div class="fleet-info">
-                    <h2 class="fleet-headline">Флот</h2>
-                    <ul class="fleet-nice">
-                        <li class="fleet-nice-item">1. Дальность</li>
-                        <li class="fleet-nice-item">2. Простота</li>
-                        <li class="fleet-nice-item">3. Точность</li>
-                    </ul>
-                    <p class="fleet-text">Наша главная цель — это обеспечить удобства и комфорт нашим пилотам. Средний
-                        возраст нашего флота составляет всего 5,3 месяца.</p>
-                </div>
-                <div class="fleet-swiper">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <img src="img/v5FRr6GnYio.jpg" class="swiper-slide" />
-                            <img src="img/wQQix-r8Juc.jpg" class="swiper-slide" />
-                            <img src="img/FYSsoM0ClS8.jpg" class="swiper-slide" />
+        <section class="company-fleet" id="2">
+            <div class="section-wrapper">
+                <h2>{{translate ? "ФЛОТ" : "FLEET"}}</h2>
+                <div class="content">
+                    <div class="content-text">
+                        <div class="content-text_inner">
+                            <h3>{{translate ? "1. Дальность" : "1. Distance"}}<br/>
+                                {{translate ? "2. Точность" : "2. Accuracy"}}<br/>
+                                {{translate ? "3. Простота" : "3. Simplicity"}}</h3>
+                            <h4>{{translate ? "Наша главная цель — это обеспечить удобства и комфорт нашим пилотам." : "Our main goal is to provide convenience and comfort to our pilots."}}</h4>
+                            <p>{{translate ? "Средний возраст нашего флота составляет всего 5,3 месяца." : "The average age of our fleet is only 5.3 months."}}</p>
                         </div>
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-scrollbar"></div>
+                        <div class="navigation-image">
+                            <b> {{ fleet[currentFleet].name }} </b>
+                            <span>{{translate ? "Количество" : "Amount"}}: {{ fleet[currentFleet].value }} </span>
+                            <div class="arrows">
+                                <svg @click="changeFleet(true)" width="29" height="22" viewbox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.875 1L27 11M27 11L16.875 21M27 11L0 11" stroke="#151515" stroke-width="2"/>
+                                </svg>
+                                <svg @click="changeFleet(false)" width="29" height="22" viewbox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.125 1L2 11M2 11L12.125 21M2 11L29 11" stroke="#151515" stroke-opacity="0.4" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
+                    <img :src="fleet[currentFleet].image" alt="Фото базы" srcset=""/>
                 </div>
             </div>
         </section>
@@ -118,24 +132,23 @@
         <div class="footer-container">
         <div class="spp">
             <div class="social">
-                <h3 class="footer-headline">Социальные сети</h3>
+                <h3 class="footer-headline">{{translate ? "Социальные сети" : "Social network"}}</h3>
                 <ul class="footer-list">
-                    <a><li class="footer-item">YouTube</li></a>
-                    <a href="https://vk.com/nordsky_va" target="_blank"><li class="footer-item">Вконтакте</li></a>
+                    <a href="https://youtube.com/@nordsky-virtual" target="_blank"><li class="footer-item">YouTube</li></a>
+                    <a href="https://vk.com/nordsky_va" target="_blank"><li class="footer-item">{{translate ? "Вконтакте" : "Vkontakte"}}</li></a>
                     <a href="https://discord.gg/mPm7T5Z9P4" target="_blank"><li class="footer-item">Discord</li></a>
                 </ul>
             </div>
             <div class="politic">
-                <h3 class="footer-headline">Политика компании</h3>
+                <h3 class="footer-headline">{{translate ? "Политика компании" : "Company policy"}}</h3>
                 <ul class="footer-list">
-                    <li class="footer-item">Условия пользования</li>
-                    <li class="footer-item">Устав авиакомпании</li>
-                    <li class="footer-item">nordskyvirtual@gmail.com</li>
+                    <a download href="скачать/Устав.pdf"><li class="footer-item">{{translate ? "Устав авиакомпании" : "Company regulation"}}</li></a>
+                    <a href="mailto:nordskyvirtual@gmail.com"><li class="footer-item">nordskyvirtual@gmail.com</li></a>
                 </ul>
             </div>
             <div class="partners">
-                <h3 class="footer-headline">Наши партнеры</h3>
-                <img src="img/VATSIM_Logo_White_No_Tagline_500px 1.png" width="164px" height="56px" >
+                <h3 class="footer-headline">{{translate ? "Наши партнеры" : "Our partners"}}</h3>
+                <a href="https://vatsim.net/" target="_blank"><img src="img/VATSIM_Logo_White_No_Tagline_500px 1.png" width="164px" height="56px"></a>
             </div>
         </div>
         <div class="web">
@@ -143,6 +156,7 @@
         </div>
     </div>
     </footer>
+</div>
     <script type="module">
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
         const swiper = new Swiper('.swiper', {
@@ -160,7 +174,8 @@
             },
         })
     </script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="Vue.js"></script>
 </body>
 
 </html>
