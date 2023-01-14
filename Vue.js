@@ -7,27 +7,27 @@ new Vue({
         {
         name: 'Boeing 737-800',
         value: 3,
-        image: 'img/v5FRr6GnYio.jpg'
+        image: 'img/B737.png'
     },
     {
         name: 'Airbus A320',
         value: 1,
-        image: 'img/wQQix-r8Juc.jpg'
+        image: 'img/A320.png'
     },
     {
         name: 'Airbus A321-200',
         value: 3,
-        image: 'img/v5FRr6GnYio.jpg' // 
+        image: 'img/A321.png' // 
     },
     {
         name: 'Airbus A321NEO',
         value: 6,
-        image: 'img/wQQix-r8Juc.jpg' // 
+        image: 'img/A321n.png' // 
     },
     {
         name: 'Airbus A350-900',
         value: 2,
-        image: 'img/v5FRr6GnYio.jpg' // 
+        image: 'img/A350.png' // 
     },
   {
         name: 'Boeing 777-300ER',
