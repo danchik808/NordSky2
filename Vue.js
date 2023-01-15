@@ -5,6 +5,11 @@ new Vue({
         burger: false,
         fleet: [
         {
+        name: 'Airbus A321NEO',
+        value: 6,
+        image: 'img/A321n.png' // 
+    },
+    {
         name: 'Boeing 737-800',
         value: 3,
         image: 'img/B737.png'
@@ -18,11 +23,6 @@ new Vue({
         name: 'Airbus A321-200',
         value: 3,
         image: 'img/A321.png' // 
-    },
-    {
-        name: 'Airbus A321NEO',
-        value: 6,
-        image: 'img/A321n.png' // 
     },
     {
         name: 'Airbus A350-900',
@@ -57,5 +57,5 @@ const paragraph = document.querySelector('.doco')
 console.log(btn)
 btn.addEventListener('click', ()=> paragraph.classList.toggle('show'))
 function show(){
- btn.innerText == 'More' ?  btn.innerText = 'Hide' : btn.innerText = 'More' 
+ btn.innerText == 'Hide' ?  btn.innerText = 'More' : btn.innerText = 'Hide' 
 }

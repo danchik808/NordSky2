@@ -82,7 +82,7 @@
                 <h2 class="about-us-headline">{{translate ? "О нас" : "About us"}}</h2>
                 <div class="about-us-texts">
                     <p class="about-us-text">{{translate ? "NordSky — это виртуальная авиакомпания европейской части России, работающая в своей сфере более двух лет. Наша авиакомпания была основана еще в начале 2021 года и продолжает свою деятельность до сих пор." : "NordSky is a virtual airline of the European part of Russia, operating in its field for more than two years. Our airline was founded at the beginning of 2021 and continues its activities to this day."}}</p>
-                    <p class="doco">{{translate ? "Средний возраст нашего флота составляет всего 5,3 месяца. Сейчас в качестве хабов используются Москва, Санкт-Петербург, Красноярск и Архангельск. С получением новых воздушных судов будут открываться и новые направления, хабы. Сейчас в качестве хабов используются Москва, Санкт-Петербург, Красноярск и Архангельск." : "The average age of our fleet is only 5.3 months. Now Moscow, St. Petersburg, Krasnoyarsk and Arkhangelsk are used as hubs. With the receipt of new aircraft, new destinations and hubs will be opened. Now Moscow, St. Petersburg, Krasnoyarsk and Arkhangelsk are used as hubs."}}</p><button onclick="show()" class="btn">{{translate ? "Скрыть" : "More"}}</button>
+                    <p class="doco">{{translate ? "Средний возраст нашего флота составляет всего 5,3 месяца. Сейчас в качестве хабов используются Москва, Санкт-Петербург, Красноярск и Архангельск. С получением новых воздушных судов будут открываться и новые направления, хабы. Сейчас в качестве хабов используются Москва, Санкт-Петербург, Красноярск и Архангельск." : "The average age of our fleet is only 5.3 months. Now Moscow, St. Petersburg, Krasnoyarsk and Arkhangelsk are used as hubs. With the receipt of new aircraft, new destinations and hubs will be opened. Now Moscow, St. Petersburg, Krasnoyarsk and Arkhangelsk are used as hubs."}}</p><button onclick="show()" class="btn">More</button>
                 </div>
             </div>
         </section>
@@ -111,20 +111,22 @@
                             <h4>{{translate ? "Наша главная цель — это обеспечить удобства и комфорт нашим пилотам." : "Our main goal is to provide convenience and comfort to our pilots."}}</h4>
                             <p>{{translate ? "Средний возраст нашего флота составляет всего 5,3 месяца." : "The average age of our fleet is only 5.3 months."}}</p>
                         </div>
-                        <div class="navigation-image">
-                            <b> {{ fleet[currentFleet].name }} </b>
-                            <span>{{translate ? "Количество" : "Amount"}}: {{ fleet[currentFleet].value }} </span>
-                            <div class="arrows">
-                                <svg @click="changeFleet(true)" width="29" height="22" viewbox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16.875 1L27 11M27 11L16.875 21M27 11L0 11" stroke="#151515" stroke-width="2"/>
-                                </svg>
-                                <svg @click="changeFleet(false)" width="29" height="22" viewbox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.125 1L2 11M2 11L12.125 21M2 11L29 11" stroke="#151515" stroke-opacity="0.4" stroke-width="2"/>
-                                </svg>
-                            </div>
+                    </div>
+                    <div class="fleet-nav-div">
+                    <div class="navigation-image">
+                        <b> {{ fleet[currentFleet].name }} </b>
+                        <span>{{translate ? "Количество" : "Amount"}}: {{ fleet[currentFleet].value }} </span>
+                        <div class="arrows">
+                            <svg @click="changeFleet(true)" width="29" height="22" viewbox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.875 1L27 11M27 11L16.875 21M27 11L0 11" stroke="#151515" stroke-width="2"/>
+                            </svg>
+                            <svg @click="changeFleet(false)" width="29" height="22" viewbox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.125 1L2 11M2 11L12.125 21M2 11L29 11" stroke="#151515" stroke-opacity="0.4" stroke-width="2"/>
+                            </svg>
                         </div>
                     </div>
                     <img :src="fleet[currentFleet].image" alt="Фото базы" srcset=""/>
+                </div>
                 </div>
             </div>
         </section>

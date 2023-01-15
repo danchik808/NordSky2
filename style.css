@@ -59,6 +59,15 @@
     .main-content-right{
         margin-right: 50px;
     }
+    .content{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+@media screen and (max-width:1166px){
+    .navigation-image{
+        display: none !important;
+    }
 }
 @media screen and (max-width:1024px){
     .navigation-image{
@@ -79,6 +88,9 @@
     }
     .about-us{
         padding-top: 66px !important;
+    }
+    .fleet-nav-div{
+        display: none !important; 
     }
 }
 @media screen and (max-width:963px) {
@@ -196,12 +208,19 @@
     padding: 0px !important;
     }
 }
-@media screen and (max-width:494px){
+@media screen and (max-width:497px){
     .content-headline{
         font-size: 25px !important;
     }
     .container-content{
         margin: 0 auto !important;
+    }
+    .container-header{
+        width: 0% !important;
+        margin: 0px !important;
+    }
+    header{
+        width: 0% !important;
     }
 }
 @media screen and (max-width:330px) {
@@ -591,6 +610,8 @@ main{
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    max-width: 149px;
+    padding-right: 20px;
 }
 b{
    font-weight: 800;
@@ -646,6 +667,8 @@ main .company-fleet .content {
 main .company-fleet img {
     max-width: 581px;
     height: 492px; 
+    object-fit: cover;
+    object-position: 0px 0px;
 }
 main .company-fleet .content-text {
     display: flex;
@@ -653,7 +676,7 @@ main .company-fleet .content-text {
     justify-content: space-between; 
 }
 main .company-fleet .section-wrapper{
-    max-width: 1076px;
+    max-width: 1350px;
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -714,6 +737,15 @@ footer{
     font-family: "Montserrat";
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
+    transition: 0.3s;
+}
+.footer-item:hover{
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 0.3s;
 }
 .web-text{
     font-weight: 800;
@@ -761,4 +793,11 @@ footer{
     font-family: "Montserrat";
     margin: 0px;
     padding-top: 31px;
+}
+.fleet-nav-div{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 750px;
+    justify-content: space-between;
+
 }
