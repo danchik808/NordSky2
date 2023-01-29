@@ -32,7 +32,7 @@ new Vue({
   {
         name: 'Boeing 777-300ER',
         value: 1,
-        image: 'img/wQQix-r8Juc.jpg' // 
+        image: 'img/B777.png' // 
     },
 ],
 currentFleet: 0
