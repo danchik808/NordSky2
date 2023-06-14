@@ -1,5 +1,6 @@
 new Vue({
     el: '#app',
+    loop: true,
     data: {
         translate: true,
         burger: false,
